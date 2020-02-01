@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5122587547656020910}
   - component: {fileID: 2967869771545106938}
+  - component: {fileID: 499515902}
   m_Layer: 0
   m_Name: Proyectil
   m_TagString: Untagged
@@ -44,6 +45,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5765e22371e45c0ba4a0b6f321319d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &499515902
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4666213444924141453}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5713298940302151753
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,6 +76,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9134656580873984232}
   - component: {fileID: 5394819426505588645}
+  - component: {fileID: 720032516}
   m_Layer: 0
   m_Name: Proyectil_100x100
   m_TagString: Untagged
@@ -123,3 +146,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &720032516
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5713298940302151753}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class Proyectil : MonoBehaviour
 {
-    // Start is called before the first frame update
+    float timeCount = 0f;
+
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        timeCount += Time.deltaTime;
+
+        // despues de 1.5 segundos de vida, destruir proyectil
+        if (timeCount> 1.5f)
+        {
+            Destroy(gameObject);
+        }
     }
 
-
-  
 }
