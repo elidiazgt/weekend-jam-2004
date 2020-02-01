@@ -53,4 +53,17 @@ public class Edificio : MonoBehaviour
         }
 
     }
+
+    public void take_damage() {
+
+        vida = vida - 10;
+
+       
+
+    }
+
+    public void repair_damage() {
+
+        vida = vida + 5;
+    }
 }
