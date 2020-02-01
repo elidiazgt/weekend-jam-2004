@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1633529515737878531}
-  - component: {fileID: 6151815497800934734}
+  - component: {fileID: 456555057}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -32,7 +32,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &6151815497800934734
+=======
+--- !u!114 &456555057
+>>>>>>> Christian_GameJam_02_01_2020
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +45,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3436365282187934388}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 26f698135cdf544e095929a73fb9fca6, type: 3}
+=======
+  m_Script: {fileID: 11500000, guid: f53227e5a7b75412cbba9f4de8848f27, type: 3}
+>>>>>>> Christian_GameJam_02_01_2020
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4598349209130392874

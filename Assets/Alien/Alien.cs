@@ -36,6 +36,6 @@ public class Alien : MonoBehaviour
 
     void Test_Disparar()
     {
-        GameObject.Instantiate(proyectil, transform.position, transform.rotation);
+        Instantiate(proyectil, transform.position, transform.rotation);
     }
 }
