@@ -14,9 +14,10 @@ public class Edificio : MonoBehaviour
     {
         vida = 100;
 
-        imagen1_Casa_100 = GameObject.Find("Edificio_1_300x300");
-        imagen2_Casa_50 = GameObject.Find("Edificio_2_300x300");
-        imagen3_Casa_0 = GameObject.Find("Edificio_3_300x300");
+        //imagen1_Casa_100 = GameObject.Find("Edificio_1_300x300");
+        imagen1_Casa_100 = gameObject.transform.Find("Edificio_1_300x300").gameObject;
+        imagen2_Casa_50 = gameObject.transform.Find("Edificio_2_300x300").gameObject;
+        imagen3_Casa_0 = gameObject.transform.Find("Edificio_3_300x300").gameObject;
 
         imagen1_Casa_100.SetActive(false);
         imagen2_Casa_50.SetActive(false);
@@ -60,7 +61,6 @@ public class Edificio : MonoBehaviour
         if (collision.name.Contains("Proyectil"))
         {
             vida -= 10;
-            Destroy(collision.gameObject);
         }
         
     }
