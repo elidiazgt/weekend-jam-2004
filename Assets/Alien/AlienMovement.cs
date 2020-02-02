@@ -10,10 +10,12 @@ public class AlienMovement : MonoBehaviour
     private float characterVelocity = 2f;
     private Vector2 movementDirection;
     private Vector2 movementPerSecond;
+    public GameObject alien;
 
     void Start() {
         latestDirectionChangeTime = 0f;
         calcuateNewMovementVector();
+      
     }
 
     void calcuateNewMovementVector() {
@@ -31,6 +33,15 @@ public class AlienMovement : MonoBehaviour
         {
             latestDirectionChangeTime = Time.time;
             calcuateNewMovementVector();
+        }
+
+        var random = Time.deltaTime % 1000;
+
+        Debug.Log("Random: " + random);
+
+        if (random > 0.04 && random < 0.05)
+        {   
+            alien.GetComponent<Alien>().shoot();
         }
 
         //move enemy: 

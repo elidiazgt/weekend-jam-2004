@@ -4,7 +4,7 @@ public class Marquee : MonoBehaviour
 {
     public string message    = "Where we're going, we don't need roads.";
     public float scrollSpeed = 50;
-    
+    public Texture image;
     Rect messageRect;
     
     void OnGUI ()
@@ -24,8 +24,8 @@ public class Marquee : MonoBehaviour
             messageRect.x      = -dimensions.x;
             messageRect.y = 700;
 
-            messageRect.width  =  dimensions.x * 2;
-            messageRect.height = dimensions.y * 5;
+            messageRect.width  =  dimensions.x * 50;
+            messageRect.height = dimensions.y * 19;
 
         }
 
@@ -37,6 +37,8 @@ public class Marquee : MonoBehaviour
             messageRect.x = -messageRect.width;
         }
         
-        GUI.Label(messageRect, message);
+        //GUI.Label(messageRect, message);
+
+        GUI.Label(messageRect, image, message);
     }
 }

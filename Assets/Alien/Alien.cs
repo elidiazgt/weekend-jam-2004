@@ -18,9 +18,9 @@ public class Alien : MonoBehaviour
     void Update()
     {
         Test_Mover();
-        if (Input.GetKeyDown("p"))
+        if (Input.GetKeyDown("2"))
         {
-            Test_Disparar();
+            shoot();
         }
 
         
@@ -62,7 +62,7 @@ public class Alien : MonoBehaviour
         transform.Translate(newPosition);
     }
 
-    void Test_Disparar()
+    public void shoot()
     {
         Instantiate(proyectil, transform.position, transform.rotation);
     }
