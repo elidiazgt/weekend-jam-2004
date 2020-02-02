@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 7184282512533695919}
   - component: {fileID: 6429845562534565676}
   - component: {fileID: 7565308784706582021}
-  - component: {fileID: 1495896263413548006}
+  - component: {fileID: 3472329386511800388}
   m_Layer: 0
   m_Name: ProyectilFix
   m_TagString: Untagged
@@ -306,14 +306,14 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1495896263413548006
+--- !u!114 &3472329386511800388
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6386835813344017790}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f1b09c6661097f41ae3b57f7b327e4c, type: 3}
   m_Name: 
