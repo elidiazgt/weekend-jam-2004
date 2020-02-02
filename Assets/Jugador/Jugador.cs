@@ -58,14 +58,15 @@ public class Jugador : MonoBehaviour
 
 
 
-    //private void OnCollisionStay2D(Collision2D collision) {
-    //    Debug.Log("reparando: "+collision.collider.name);
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        Debug.Log("reparando: " + collision.collider.name);
 
-    //    if (Input.GetKeyDown("space"))
-    //    {
-    //        //Debug.Log("reparando: "+collision.collider.name);
-    //    }
-    //}
+        if (Input.GetKeyDown("space"))
+        {
+            Debug.Log("reparando: "+collision.collider.name);
+        }
+    }
 
     //private void OnTriggerEnter2D(Collider2D collision) {
     //    if (collision.name.Contains("Proyectil"))
