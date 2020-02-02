@@ -53,7 +53,7 @@ public class AlienMovement : MonoBehaviour
         if (transform.position.x > 8)
         {
 
-            position_x = position_x * %-1;
+            position_x = position_x * -1;
         }
 
         transform.position = new Vector2(position_x,
