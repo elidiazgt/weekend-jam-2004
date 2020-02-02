@@ -31,13 +31,13 @@ public class Alien : MonoBehaviour
          //x_position = 0;
         if (Input.GetKeyDown("1")) {
 
-            x_position = x_position - 2;
+            x_position = x_position - 1;
         }
 
         if (Input.GetKeyDown("3"))
         {
 
-            x_position = x_position + 2;
+            x_position = x_position + 1;
         }
 
         Debug.Log("x position" + x_position);
