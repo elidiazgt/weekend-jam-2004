@@ -72,6 +72,7 @@ public class Edificio : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Debug.Log("edificio trigger enter: "+collision.name);
         if (collision.name.Contains("Proyectil"))
         {
             vida -= 10;

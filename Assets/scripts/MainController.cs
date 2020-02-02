@@ -47,7 +47,7 @@ public class MainController : MonoBehaviour
         foreach (var item in buildings)
         {
             i++;
-            general_score.text += " #" + i + " " + item.GetComponent<Edificio>().vida;
+            general_score.text += "  #" + i + " " + item.GetComponent<Edificio>().vida;
         }
     }
 }
