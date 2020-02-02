@@ -39,6 +39,6 @@ public class Marquee : MonoBehaviour
         
         //GUI.Label(messageRect, message);
 
-        GUI.Label(messageRect, image, message);
+       // GUI.Label(messageRect, image, message);
     }
 }
