@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 
-public class PlayerHealthBarScript : MonoBehaviour
+public class HealthBar : MonoBehaviour
 {
 
     public GUIStyle progress_empty;
@@ -13,8 +13,10 @@ public class PlayerHealthBarScript : MonoBehaviour
     //current progress
     public float barDisplay;
 
-    Vector2 pos = new Vector2(10, 50);
-    Vector2 size = new Vector2(250, 50);
+    public Vector2 pos = new Vector2(10,10);
+
+
+    public Vector2 size = new Vector2(300, 50);
 
     public Texture2D emptyTex;
     public Texture2D fullTex;
@@ -38,7 +40,11 @@ public class PlayerHealthBarScript : MonoBehaviour
     {
 
         //the player's health
-        //barDisplay = PlayerMoveScript.playerHealth / PlayerMoveScript.playerHealthTotal;
+        barDisplay = this.GetComponent<Edificio>().vida / 100;
     }
-
+    private void Start()
+    {
+        pos = new Vector2(transform.position.x + 30f, transform.position.y + 40f);
+        
+    }
 }

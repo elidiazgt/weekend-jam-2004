@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MainController : MonoBehaviour
 {
     public Notifications notifications ;
     public List<GameObject> buildings;
-
+    public TextMeshProUGUI general_score;
 
     private static MainController _instance;
 
@@ -41,6 +42,12 @@ public class MainController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        general_score.text = "Score: ";//+ Time.deltaTime + "% #2" + "";
+        var i = 0;
+        foreach (var item in buildings)
+        {
+            i++;
+            general_score.text += " #" + i + " " + item.GetComponent<Edificio>().vida;
+        }
     }
 }
