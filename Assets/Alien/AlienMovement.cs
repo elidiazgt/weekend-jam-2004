@@ -42,8 +42,21 @@ public class AlienMovement : MonoBehaviour
             alien.GetComponent<Alien>().shoot();
         }
 
-        //move enemy: 
-        transform.position = new Vector2(transform.position.x + (movementPerSecond.x * Time.deltaTime),
+        //move enemy:
+        var position_x = transform.position.x + (movementPerSecond.x * Time.deltaTime);
+
+        if (transform.position.x < -8) {
+
+            position_x = position_x * 1;
+        }
+
+        if (transform.position.x > 8)
+        {
+
+            position_x = position_x * %-1;
+        }
+
+        transform.position = new Vector2(position_x,
         transform.position.y + (movementPerSecond.y * Time.deltaTime));
 
     }
