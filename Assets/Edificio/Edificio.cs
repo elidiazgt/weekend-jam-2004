@@ -68,11 +68,21 @@ public class Edificio : MonoBehaviour
         vida = vida + 5;
     }
 
+    private void OnCollisionStay2D(Collision2D collision) {
+        Debug.Log("edificio OnCollisionStay2D: " + collision.collider.name);
+    }
 
+    private void OnTriggerStay(Collider collision) {
+        Debug.Log("edificio OnTriggerStay: " + collision.name);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision) {
+        Debug.Log("edificio OnTriggerStay2D: " + collision.name);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log("edificio trigger enter: "+collision.name);
+        Debug.Log("edificio trigger enter: "+collision.name);
         if (collision.name.Contains("Proyectil"))
         {
             vida -= 10;

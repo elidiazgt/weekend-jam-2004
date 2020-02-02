@@ -29,6 +29,10 @@ public class Jugador : MonoBehaviour
         Debug.Log("jugador collision enter: " + collision.collider.name);
     }
 
+    private void OnTriggerStay2D(Collider2D collision) {
+        Debug.Log("player OnTriggerStay2D");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision) {
         Debug.Log("jugador trigger enter");
         if (collision.name.Contains("Proyectil"))
