@@ -1,0 +1,12 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class WellKnown : MonoBehaviour
+{
+    public class Jugador
+    {
+        public const string Prefab = "Jugador";
+        public const string Imagen = "Jugador_100x100";
+    }
+}
