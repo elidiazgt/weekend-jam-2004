@@ -23,6 +23,13 @@ public class Jugador : MonoBehaviour
 
 
         transform.Translate(newPosition);
+
+        if (Input.GetKeyDown("space"))
+        {
+            shoot();
+        }
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -40,6 +47,16 @@ public class Jugador : MonoBehaviour
             //vida -= 10;
         }
     }
+    public GameObject proyectilFix;
+
+
+    public void shoot() {
+        var aaa= Instantiate(proyectilFix, transform.position, transform.rotation);
+        aaa.GetComponent<Rigidbody2D>().velocity = Vector2.up * 4.2f;
+        //aaa.transform.
+    }
+
+
 
     //private void OnCollisionStay2D(Collision2D collision) {
     //    Debug.Log("reparando: "+collision.collider.name);

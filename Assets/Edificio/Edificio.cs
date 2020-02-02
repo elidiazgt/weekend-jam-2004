@@ -87,6 +87,10 @@ public class Edificio : MonoBehaviour
         {
             vida -= 10;
         }
+        if (collision.name.Contains("fixer"))
+        {
+            vida += 5;
+        }
     }
 
 }
