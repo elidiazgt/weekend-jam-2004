@@ -54,7 +54,7 @@ public class Alien : MonoBehaviour
         //   /* Z */ 0f);
 
 
-        if (x_position > 8 || x_position < -8)
+        if (x_position > 5 || x_position < -5)
         {
             x_position = 0;
         }
