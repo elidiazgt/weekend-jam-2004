@@ -40,9 +40,9 @@ public class Alien : MonoBehaviour
             x_position = x_position + 1;
         }
 
-        Debug.Log("x position" + x_position);
+        //Debug.Log("x position" + x_position);
 
-        Debug.Log(" Time.deltaTime" + Time.deltaTime);
+        //Debug.Log(" Time.deltaTime" + Time.deltaTime);
 
         Vector3 newPosition = new Vector3(
            /* X */ x_position  * Time.deltaTime,

@@ -29,22 +29,23 @@ public class Jugador : MonoBehaviour
         Debug.Log("jugador collision enter: " + collision.collider.name);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        Debug.Log("jugador trigger enter");
-        if (collision.name.Contains("Proyectil"))
-        {
-            //vida -= 10;
-        }
-    }
-
-    //private void OnCollisionStay2D(Collision2D collision) {
-    //    Debug.Log("reparando: "+collision.collider.name);
-
-    //    if (Input.GetKeyDown("space"))
+    //private void OnTriggerEnter2D(Collider2D collision) {
+    //    Debug.Log("jugador trigger enter");
+    //    if (collision.name.Contains("Proyectil"))
     //    {
-    //        //Debug.Log("reparando: "+collision.collider.name);
+    //        //vida -= 10;
     //    }
     //}
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        Debug.Log("reparando: " + collision.collider.name);
+
+        if (Input.GetKeyDown("space"))
+        {
+            Debug.Log("reparando: "+collision.collider.name);
+        }
+    }
 
     //private void OnTriggerEnter2D(Collider2D collision) {
     //    if (collision.name.Contains("Proyectil"))
