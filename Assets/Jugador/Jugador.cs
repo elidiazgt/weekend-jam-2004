@@ -23,19 +23,40 @@ public class Jugador : MonoBehaviour
 
 
         transform.Translate(newPosition);
+
+        if (Input.GetKeyDown("space"))
+        {
+            shoot();
+        }
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
         Debug.Log("jugador collision enter: " + collision.collider.name);
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision) {
-    //    Debug.Log("jugador trigger enter");
-    //    if (collision.name.Contains("Proyectil"))
-    //    {
-    //        //vida -= 10;
-    //    }
-    //}
+    private void OnTriggerStay2D(Collider2D collision) {
+        Debug.Log("player OnTriggerStay2D");
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        Debug.Log("jugador trigger enter");
+        if (collision.name.Contains("Proyectil"))
+        {
+            //vida -= 10;
+        }
+    }
+    public GameObject proyectilFix;
+
+
+    public void shoot() {
+        var aaa= Instantiate(proyectilFix, transform.position, transform.rotation);
+        aaa.GetComponent<Rigidbody2D>().velocity = Vector2.up * 4.2f;
+        //aaa.transform.
+    }
+
+
 
     private void OnCollisionStay2D(Collision2D collision)
     {

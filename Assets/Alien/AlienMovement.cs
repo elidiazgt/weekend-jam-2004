@@ -37,8 +37,6 @@ public class AlienMovement : MonoBehaviour
 
         var random = Time.deltaTime % 1000;
 
-       /// Debug.Log("Random: " + random);
-
         if (random > 0.04 && random < 0.05)
         {   
             alien.GetComponent<Alien>().shoot();
