@@ -5,9 +5,14 @@ using UnityEngine;
 public class Alien : MonoBehaviour
 {
     public GameObject proyectil;
+<<<<<<< HEAD
     private float x_position = 0;
 
 
+=======
+
+    
+>>>>>>> ebde9580609037329bc2bd16f954f0e6fee17a61
     void Start()
     {
         
@@ -17,7 +22,11 @@ public class Alien : MonoBehaviour
     void Update()
     {
         Test_Mover();
+<<<<<<< HEAD
         if (Input.GetKeyDown("2"))
+=======
+        if (Input.GetKeyDown("p"))
+>>>>>>> ebde9580609037329bc2bd16f954f0e6fee17a61
         {
             Test_Disparar();
         }
@@ -27,6 +36,7 @@ public class Alien : MonoBehaviour
 
     void Test_Mover()
     {
+<<<<<<< HEAD
 
          //x_position = 0;
         if (Input.GetKeyDown("1")) {
@@ -52,6 +62,13 @@ public class Alien : MonoBehaviour
         {
             x_position = 0;
         }
+=======
+        Vector3 newPosition = new Vector3(
+           /* X */ Input.GetAxis("Horizontal") * 5 * Time.deltaTime,
+           /* Y */ Input.GetAxis("Vertical") * 5 * Time.deltaTime,
+           /* Z */ 0f);
+
+>>>>>>> ebde9580609037329bc2bd16f954f0e6fee17a61
         transform.Translate(newPosition);
     }
 
