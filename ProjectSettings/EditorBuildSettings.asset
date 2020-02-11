@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/scene_tools.unity
-    guid: 0a9e076e6cc4342c0985c82e57c6f6e8
+    path: Assets/MisEscenas/01_Intro/01_Intro.unity
+    guid: 0a86ea3421af64a2e91debddd7630511
+  - enabled: 1
+    path: Assets/MisEscenas/02_Menu/02_Menu.unity
+    guid: c0e84a7446a3c4c91b3f76163a235ff8
+  - enabled: 1
+    path: Assets/MisEscenas/03_About/03_About.unity
+    guid: 27d029d946154494595a1753dfd2372d
+  - enabled: 1
+    path: Assets/MisEscenas/04_Juego/04_Juego.unity
+    guid: ddfe416126934462aa256a369bdb6383
   m_configObjects: {}

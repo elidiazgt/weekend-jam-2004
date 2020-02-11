@@ -15,4 +15,12 @@ public class WellKnown
         public const string Prefab = "Fondo";
         public const string Imagen = "Fondo_2267x2267";
     }
+
+    public class Scenes
+    {
+        public const string Intro = "01_Intro";
+        public const string Menu = "02_Menu";
+        public const string Juego = "04_Juego";
+        public const string About = "03_About";
+    }
 }

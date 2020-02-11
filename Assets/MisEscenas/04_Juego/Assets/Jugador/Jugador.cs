@@ -25,7 +25,7 @@ public class Jugador : MonoBehaviour
 
         transform.Translate(newPosition);
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             shoot();
         }
