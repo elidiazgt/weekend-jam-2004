@@ -12,6 +12,8 @@ public class Manager_Juego : MonoBehaviour
     GameObject time;
 
     float timeCount;
+    int scoreCount;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +24,14 @@ public class Manager_Juego : MonoBehaviour
         time = GameObject.Find("Text_Time");
 
         DeactivatePanelGameOver();
+
+        timeCount = 0f;
+        scoreCount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         timeCount += Time.deltaTime;
         UpdateTimeLabel((int)timeCount);
     }
@@ -63,8 +67,9 @@ public class Manager_Juego : MonoBehaviour
         this.topScore.GetComponent<Text>().text = topScore;
     }
 
-    public void ChageScore(int score)
+    public void AddToScore(int addToScore)
     {
-        this.score.GetComponent<Text>().text = score.ToString();
+        this.scoreCount += addToScore;
+        this.score.GetComponent<Text>().text = scoreCount.ToString();
     }
 }

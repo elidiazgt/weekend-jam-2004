@@ -4,66 +4,63 @@ using UnityEngine;
 
 public class Alien : MonoBehaviour
 {
+    List<GameObject> pathPoints = new List<GameObject>();
+    int pathPoints_Counter = 0;
+
     public GameObject proyectil;
-
-    private float x_position = 0;
-
 
     void Start()
     {
-        
+        pathPoints.Add(GameObject.Find("PathHead"));
+        pathPoints.Add(GameObject.Find("PathTail"));
+    }
+
+
+    void Update()
+    {
+        FollowPath(2f);
+
+        RandomShoot();
+    }
+
+
+
+    void FollowPath(float Velocidad)
+    {
+        // Mientras no llegue a la distancia 0.5, seguir caminando, si no, cambiar de pocicio
+        if (Vector3.Distance(pathPoints[pathPoints_Counter].transform.position, this.transform.position) > 0.5)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, pathPoints[pathPoints_Counter].transform.position, Time.deltaTime * Velocidad);
+        }
+        else if (pathPoints_Counter < pathPoints.Count - 1)
+        {
+            pathPoints_Counter++;
+        }
+        else
+        {
+            // En caso que se termine el loop, aqui lo reinicio mandando el objeto al punto 0
+            pathPoints_Counter = 0;
+        }
+    }
+
+
+    float timeCount = 0f;
+    void RandomShoot()
+    {
+        timeCount += Time.deltaTime;
+
+        if(timeCount > 1f)
+        {
+            int result = Random.Range(0, 2);
+            if(result == 1)
+            {
+                // shoot
+                var nuevoProyectil = Instantiate(proyectil, transform.position, transform.rotation);
+                nuevoProyectil.GetComponent<Rigidbody2D>().velocity = Vector2.down * 4.2f;
+            }
+            timeCount = 0f;
+        }
     }
 
     
-    void Update()
-    {
-        Test_Mover();
-        if (Input.GetKeyDown("2"))
-        {
-            shoot();
-        }
-
-        
-    }
-
-    void Test_Mover()
-    {
-         //x_position = 0;
-        if (Input.GetKeyDown("1")) {
-
-            x_position = x_position - 1;
-        }
-
-        if (Input.GetKeyDown("3"))
-        {
-
-            x_position = x_position + 1;
-        }
-
-        //Debug.Log("x position" + x_position);
-
-        //Debug.Log(" Time.deltaTime" + Time.deltaTime);
-
-        Vector3 newPosition = new Vector3(
-           /* X */ x_position  * Time.deltaTime,
-           /* Y */  0 * Time.deltaTime,
-           /* Z */ 0f);
-        //Vector3 newPosition = new Vector3(
-        //   /* X */ Input.GetAxis("Horizontal") * 5 * Time.deltaTime,
-        //   /* Y */ Input.GetAxis("Vertical") * 5 * Time.deltaTime,
-        //   /* Z */ 0f);
-
-
-        if (x_position > 5 || x_position < -5)
-        {
-            x_position = 0;
-        }
-
-        transform.Translate(newPosition);
-    }
-
-    public void shoot()
-    {
-        Instantiate(proyectil, transform.position, transform.rotation);
-    }
 }
