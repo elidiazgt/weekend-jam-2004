@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,10 +15,13 @@ public class Manager_Juego : MonoBehaviour
     float timeCount;
     int scoreCount;
 
+    public List<GameObject> casas = new List<GameObject>();
+
 
     // Start is called before the first frame update
     void Start()
     {
+
         panel_GameOver = GameObject.Find("Panel_GameOver");
         topScore = GameObject.Find("Text_GameOver");
         score = GameObject.Find("Text_Score");
@@ -34,8 +38,18 @@ public class Manager_Juego : MonoBehaviour
     {
         timeCount += Time.deltaTime;
         UpdateTimeLabel((int)timeCount);
+        UpdateScore();
     }
 
+    void UpdateScore()
+    {
+        var result = casas.Select(casa => casa.GetComponent<Edificio>().vida).ToList();
+        
+        var total = 0;
+        foreach(var i in result) { total += i; }
+
+        this.score.GetComponent<Text>().text = $"Score: {total}";
+    }
 
     private void UpdateTimeLabel(int seconds)
     {
