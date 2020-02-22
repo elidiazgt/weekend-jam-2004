@@ -27,6 +27,7 @@ public class Proyectil : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Destroy(gameObject);
         if ((collision.name.Contains("Proyectil") == false))
         {
             Destroy(gameObject);
