@@ -12,8 +12,9 @@ public class Manager_Juego : MonoBehaviour
     GameObject score;
     GameObject time;
 
+
     float timeCount;
-    int scoreCount;
+    public int scoreCount;
 
     public List<GameObject> casas = new List<GameObject>();
 
@@ -39,16 +40,24 @@ public class Manager_Juego : MonoBehaviour
         timeCount += Time.deltaTime;
         UpdateTimeLabel((int)timeCount);
         UpdateScore();
+
+
+        if(scoreCount <= 0)
+        {
+            ActivatePanelGameOver();
+            Destroy(GameObject.Find(WellKnown.Jugador.Prefab));
+            Destroy(GameObject.Find("Alien"));
+        }
     }
 
     void UpdateScore()
     {
         var result = casas.Select(casa => casa.GetComponent<Edificio>().vida).ToList();
-        
-        var total = 0;
-        foreach(var i in result) { total += i; }
 
-        this.score.GetComponent<Text>().text = $"Score: {total}";
+        scoreCount = 0;
+        foreach(var i in result) { scoreCount += i; }
+
+        this.score.GetComponent<Text>().text = $"Score: {scoreCount}";
     }
 
     private void UpdateTimeLabel(int seconds)
@@ -76,14 +85,7 @@ public class Manager_Juego : MonoBehaviour
         this.panel_GameOver.SetActive(false);
     }
 
-    public void ChageGameOverTopScore(string topScore)
-    {
-        this.topScore.GetComponent<Text>().text = topScore;
-    }
 
-    public void AddToScore(int addToScore)
-    {
-        this.scoreCount += addToScore;
-        this.score.GetComponent<Text>().text = scoreCount.ToString();
-    }
+
+
 }

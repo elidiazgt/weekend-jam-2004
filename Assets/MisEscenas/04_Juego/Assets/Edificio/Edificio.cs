@@ -31,7 +31,11 @@ public class Edificio : MonoBehaviour
     {
 
         // vida entre 0 y 10
-        if (vida < 10)
+        if( vida < 0)
+        {
+            this.gameObject.SetActive(false);
+        }
+        else if (vida < 10)
         {
             imagen1_Casa_100.SetActive(false);
             imagen2_Casa_50.SetActive(false);
